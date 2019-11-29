@@ -3,11 +3,17 @@
 
 <%@dose = Dose.new%>
 
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+
+
 <%= simple_form_for([@cocktail, @dose]) do |d| %>
 <%= d.input :description %>
 <%= d.association :ingredient%>
 <%= d.submit  %>
 <% end %>
+
+
+
 
 <% @doses.each do |dose| %>
  <ul>
@@ -18,6 +24,8 @@
     data: { confirm: 'Are you sure?' } %>
 </ul>
 <% end %>
+
+
 
 
 
